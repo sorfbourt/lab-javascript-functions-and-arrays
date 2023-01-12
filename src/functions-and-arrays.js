@@ -16,18 +16,18 @@ function maxOfTwoNumbers(a, b) {
 
 
 // Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot', 'thelongestwordintheworld'];
 const emptyArr = [];
 const singleWordArray = ["Krystina"];
 
-function findLongestWord(arr) {
+function findLongestWord(wordsArr) {
 
 
-  if(arr == ""){
+  if(wordsArr == ""){
     return null;
   }
-  if(arr.length == 1){
-    return arr[0];
+  if(wordsArr.length == 1){
+    return wordsArr[0];
   }
   else {
     
@@ -35,32 +35,26 @@ function findLongestWord(arr) {
       let count = 0
       for(i=0;i<word.length;i++){
         count++
+        console.log(count);
         }
-      console.log(count);
-
       return count
       
     }
-    let longestWordCount = "";
-    let longestWordIndex = "";
 
-    for(i=0;i<arr.length;i++){
-      countLetters(arr[i]);
-      if(count > longestWordCount){
-        longestWordCount = count;
-        longestWordIndex = i;
-      }
+    let longestWord = "";
+
+    for(i=0;i<wordsArr.length;i++){
+      if(wordsArr[i].length > longestWord.length){
+        longestWord = wordsArr[i];
+      } 
+      
     }
-    //arr.forEach(countLetters)
-
- 
-    return "Not empty";
-
+    return longestWord;
     }
     
 }
 
-console.log(findLongestWord(words));
+//console.log(findLongestWord(words));
 
 
 // Iteration #3: Calculate the sum
@@ -73,18 +67,18 @@ const notAllZeroArray = [0,0,5,0,0,0];
 
 function checkIfAllZero (arr){
   for(i=0;i<arr.length;i++){
+    //console.log(arr[i])
     if (arr[i] !== 0){
       return false;
       break
     }
-    else {
-      return true;
-    }
   }
+  return true;
 }
 
 
-console.log(checkIfAllZero (notAllZeroArray));
+//console.log(checkIfAllZero(notAllZeroArray))
+
 
 function sumNumbers(arr) {
 
@@ -97,9 +91,9 @@ function sumNumbers(arr) {
     return arr[0];
   }
   //if all equal 0
-
-  //arr.every(checkIfAllZero)
-
+  if (checkIfAllZero (arr) == true){
+    return "zero";
+  }
   //sum
   else {
     let sum = 0
@@ -111,7 +105,7 @@ function sumNumbers(arr) {
 
 }
 
-console.log(sumNumbers(emptyNumbers))
+//console.log(sumNumbers(allZeroArray))
 
 
 
@@ -122,9 +116,36 @@ function sum() {}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
+
+
+
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arr) {
+
+  if(arr.length == 0){
+    return null
+  }
+  if(arr.length==1){
+    let average = arr[0]
+    return average
+  }
+  let sum = sumNumbers(arr)
+  console.log(sum)
+  let totalNumbers = arr.length
+  console.log(totalNumbers)
+  let average = Math.round(sumNumbers / totalNumbers)
+  console.log(average)
+  console.log()
+  return average;
+
+}
+
+console.log(averageNumbers(numbersAvg))
+
+
+
+
 
 
 // Level 2: Array of strings
