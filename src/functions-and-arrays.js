@@ -1,19 +1,117 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(a, b) {
+  if(a > b){
+    return a;
+  } 
+  else if (a < b){
+    return b;
+  }
+  else {
+    return a;
+  }
+}
+
+//console.log(maxOfTwoNumbers(4, 1000));
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+const emptyArr = [];
+const singleWordArray = ["Krystina"];
 
-function findLongestWord() {}
+function findLongestWord(arr) {
 
+
+  if(arr == ""){
+    return null;
+  }
+  if(arr.length == 1){
+    return arr[0];
+  }
+  else {
+    
+    function countLetters (word){
+      let count = 0
+      for(i=0;i<word.length;i++){
+        count++
+        }
+      console.log(count);
+
+      return count
+      
+    }
+    let longestWordCount = "";
+    let longestWordIndex = "";
+
+    for(i=0;i<arr.length;i++){
+      countLetters(arr[i]);
+      if(count > longestWordCount){
+        longestWordCount = count;
+        longestWordIndex = i;
+      }
+    }
+    //arr.forEach(countLetters)
+
+ 
+    return "Not empty";
+
+    }
+    
+}
+
+console.log(findLongestWord(words));
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+const emptyNumbers = [];
+const oneNumber = [2];
+const allZeroArray = [0,0,0,0,0,0];
+const notAllZeroArray = [0,0,5,0,0,0];
 
-function sumNumbers() {}
+
+function checkIfAllZero (arr){
+  for(i=0;i<arr.length;i++){
+    if (arr[i] !== 0){
+      return false;
+      break
+    }
+    else {
+      return true;
+    }
+  }
+}
+
+
+console.log(checkIfAllZero (notAllZeroArray));
+
+function sumNumbers(arr) {
+
+  // if array is empty
+  if(arr == ""){
+    return 0;
+  }
+  //if array has 1 element
+  if(arr.length == 1){
+    return arr[0];
+  }
+  //if all equal 0
+
+  //arr.every(checkIfAllZero)
+
+  //sum
+  else {
+    let sum = 0
+    for(i=0;i<arr.length;i++){
+      sum += arr[i];
+    }
+    return sum;
+  }
+
+}
+
+console.log(sumNumbers(emptyNumbers))
 
 
 
