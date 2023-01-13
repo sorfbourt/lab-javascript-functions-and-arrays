@@ -16,7 +16,7 @@ function maxOfTwoNumbers(a, b) {
 
 
 // Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot', 'thelsdfsdfsdfsdfdsfrld'];
+const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot', 'TheLongestWordEver'];
 const emptyArr = [];
 const singleWordArray = ["Krystina"];
 
@@ -44,7 +44,7 @@ function findLongestWord(wordsArr) {
     
 }
 
-//console.log(findLongestWord(words));
+//console.log(findLongestWord(singleWordArrays));
 
 
 // Iteration #3: Calculate the sum
@@ -63,11 +63,11 @@ function checkIfAllZero (arr){
       break
     }
   }
-  return true;
+  return 0;
 }
 
 
-//console.log(checkIfAllZero(notAllZeroArray))
+//console.log(checkIfAllZero(oneNumber))
 
 
 function sumNumbers(arr) {
@@ -95,7 +95,7 @@ function sumNumbers(arr) {
 
 }
 
-console.log(sumNumbers(numbers))
+//console.log(sumNumbers(numbers))
 
 
 
@@ -110,6 +110,7 @@ function sum() {}
 
 
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+const oneNumberArray = [9];
 
 function averageNumbers(arr) {
 
@@ -117,20 +118,17 @@ function averageNumbers(arr) {
     return null
   }
   if(arr.length==1){
-    let average = arr[0]
+    let average = arr[0] /arr.length
     return average
   }
   let sum = sumNumbers(arr)
-    //console.log(parseFloat(sum))
   let totalNumbers = arr.length
-    //console.log(totalNumbers)
-  let average = sumNumbers / totalNumbers
-    //console.log(average)
+  let average = sum / totalNumbers
   return average;
 
 }
 
-console.log(averageNumbers(numbersAvg))
+//console.log(averageNumbers(oneNumberArray))
 
 
 
@@ -169,10 +167,9 @@ function averageWordLength(wordsArray) {
   }
   //console.log(wordsWordCountArr)
   return averageNumbers(wordsWordCountArr)
-  //console.log(averageNumbers(wordsWordCountArr))
 }
 
-console.log(averageWordLength(wordsArr))
+//console.log(averageWordLength(wordsArr))
 
 
 
@@ -182,7 +179,7 @@ console.log(averageWordLength(wordsArr))
 
 // Bonus - Iteration #4.1
 
-const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10, false];
 // should return: 5.7
 
 function avg(arr) {
@@ -202,12 +199,12 @@ for(i=0;i<arr.length;i++){
     }
 
   }
-  //console.log(turnedToNumArr)
+  console.log(turnedToNumArr)
   return averageNumbers(turnedToNumArr)
   
 }
 
-console.log(avg(mixedArr))
+//console.log(avg(mixedArr))
 
 
 
@@ -243,7 +240,6 @@ function uniquifyArray(arr) {
       uniqueArr.push(arr[i])
     }
   }
-  //console.log(uniqueArr)
   return uniqueArr
 }
 
